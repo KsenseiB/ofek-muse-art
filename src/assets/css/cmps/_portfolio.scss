@@ -1,0 +1,80 @@
+.gallery-container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+    .image {
+        // display: inline-block;
+        max-width: 100%;
+        max-height: 16rem;
+        object-fit: contain;
+        // flex-grow: 2;
+        // padding: 0.2rem;
+        transition: all 0.1s linear;
+    }
+    .image:hover {
+        box-shadow: rgba(0, 0, 0, 0.8) inset;
+        transform: scale(1.07);
+        // max-height: 50vh;
+        cursor: pointer;
+    }
+
+}
+    .portfolio-nav{
+    vertical-align: center;
+    margin-bottom: 10px;
+    
+    button {
+        color: var(--light);
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        margin: 0.4rem;
+        position: relative;
+        text-decoration: none;
+        padding-bottom: 8px;
+      
+         &:before,
+          &:after {
+              content: '';
+              position: absolute;
+              bottom: 2px;
+              left: 0; right: 0;
+              height: 2px;
+              background-color: rgb(33, 92, 231);
+          }
+          &:before {
+              opacity: 0;
+              transform: translateY(-8px);
+              transition: transform 0s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0s;
+          }
+          &:after {
+              opacity: 0;
+              transform: translateY(8px/2);
+              transition: transform .2s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .2s;
+          }
+          &:hover,
+          &:focus {
+              &:before,
+              &:after {
+                  opacity: 1;
+                  transform: translateY(0);
+              }
+              &:before {
+                  transition: transform .2s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .2s;
+              }
+              &:after {
+                  transition: transform 0s .2s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0s .2s;
+              }
+          }
+      }
+
+}
+    .tag-filter {
+    font-size: 0.8rem;
+    vertical-align: center;
+
+}
+
